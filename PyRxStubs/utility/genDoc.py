@@ -275,9 +275,8 @@ def generate_pyi(stubPath,moduleName, module, dsdict,rtTypes):
         
         #write the base module names to the stub file
         for mname in all_modules_names:
-            f.write(f'import {mname}\n')
-        f.write('from typing import overload\n')
-        f.write('from typing import Any\n')
+            f.write(f'from . import {mname}\n')
+        f.write('from typing import Any, overload\n')
 
         for name, obj in inspect.getmembers(module):
             if inspect.isclass(obj):
