@@ -1,13 +1,12 @@
-import PyRx
-import PyGe
-import PyGi
-import PyGs
-import PyDb
-import PyAp
-import PyEd
-import PyPl
-from typing import overload
-from typing import Any
+from . import PyRx
+from . import PyGe
+from . import PyGi
+from . import PyGs
+from . import PyDb
+from . import PyAp
+from . import PyEd
+from . import PyPl
+from typing import Any, overload
 
 class Core(object):
     def __init__ (self)-> None :
@@ -379,7 +378,7 @@ class DSDData(PlObject):
         '''setSheetType( (DSDData)arg1, (SheetType)arg2) -> None :
 
     C++ signature :
-        void setSheetType(class PyPlDSDData {lvalue},enum AcPlDSDEntry::SheetType)'''
+        void setSheetType(class PyPlDSDData {lvalue},enum ZcPlDSDEntry::SheetType)'''
         ...
     def setUnrecognizedData (self, *args, **kwargs)-> None :
         '''setUnrecognizedData( (DSDData)arg1, (str)arg2, (str)arg3) -> None :
@@ -408,7 +407,7 @@ setUnrecognizedData( (DSDData)arg1, (list)arg2, (list)arg3) -> None :
         '''sheetType( (DSDData)arg1) -> SheetType :
 
     C++ signature :
-        enum AcPlDSDEntry::SheetType sheetType(class PyPlDSDData {lvalue})'''
+        enum ZcPlDSDEntry::SheetType sheetType(class PyPlDSDData {lvalue})'''
         ...
     def viewFile (self, *args, **kwargs)-> bool :
         '''viewFile( (DSDData)arg1) -> bool :
@@ -504,7 +503,7 @@ class DSDEntry(PlObject):
         '''setSetupType( (DSDEntry)arg1, (SetupType)arg2) -> None :
 
     C++ signature :
-        void setSetupType(class PyPlDSDEntry {lvalue},enum AcPlDSDEntry::SetupType)'''
+        void setSetupType(class PyPlDSDEntry {lvalue},enum ZcPlDSDEntry::SetupType)'''
         ...
     def setTitle (self, *args, **kwargs)-> None :
         '''setTitle( (DSDEntry)arg1, (str)arg2) -> None :
@@ -522,7 +521,7 @@ class DSDEntry(PlObject):
         '''setupType( (DSDEntry)arg1) -> SetupType :
 
     C++ signature :
-        enum AcPlDSDEntry::SetupType setupType(class PyPlDSDEntry {lvalue})'''
+        enum ZcPlDSDEntry::SetupType setupType(class PyPlDSDEntry {lvalue})'''
         ...
     def title (self, *args, **kwargs)-> str :
         '''title( (DSDEntry)arg1) -> str :
@@ -651,7 +650,7 @@ This class cannot be instantiated from Python'''
         '''getMediaBounds( (PlotConfig)arg1, (str)arg2, (Point2d)arg3, (BoundBlock2d)arg4) -> None :
 
     C++ signature :
-        void getMediaBounds(class PyPlPlotConfig {lvalue},class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class AcGePoint2d {lvalue},class PyGeBoundBlock2d {lvalue})'''
+        void getMediaBounds(class PyPlPlotConfig {lvalue},class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class ZcGePoint2d {lvalue},class PyGeBoundBlock2d {lvalue})'''
         ...
     def isPlotToFile (self, *args, **kwargs)-> bool :
         '''isPlotToFile( (PlotConfig)arg1) -> bool :
@@ -669,7 +668,7 @@ This class cannot be instantiated from Python'''
         '''plotToFileCapability( (PlotConfig)arg1) -> PlotToFileCapability :
 
     C++ signature :
-        enum AcPlPlotConfig::PlotToFileCapability plotToFileCapability(class PyPlPlotConfig {lvalue})'''
+        enum ZcPlPlotConfig::PlotToFileCapability plotToFileCapability(class PyPlPlotConfig {lvalue})'''
         ...
     def refreshMediaNameList (self, *args, **kwargs)-> None :
         '''refreshMediaNameList( (PlotConfig)arg1) -> None :
@@ -794,7 +793,7 @@ class PlotConfigManager(object):
         '''getStdConfigName( (PlotConfigManager)arg1, (StdConfigs)arg2) -> str :
 
     C++ signature :
-        class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > getStdConfigName(class PyPlPlotConfigManager {lvalue},enum AcPlPlotConfigManager::StdConfigs)'''
+        class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > getStdConfigName(class PyPlPlotConfigManager {lvalue},enum ZcPlPlotConfigManager::StdConfigs)'''
         ...
     def getStyleList (self, *args, **kwargs)-> list[str] :
         '''getStyleList( (PlotConfigManager)arg1) -> list :
@@ -811,7 +810,7 @@ class PlotConfigManager(object):
 refreshList( (PlotConfigManager)arg1, (RefreshCode)arg2) -> None :
 
     C++ signature :
-        void refreshList(class PyPlPlotConfigManager {lvalue},enum AcPlPlotConfigManager::RefreshCode)'''
+        void refreshList(class PyPlPlotConfigManager {lvalue},enum ZcPlPlotConfigManager::RefreshCode)'''
         ...
     def setCurrentConfig (self, *args, **kwargs)-> PyPl.PlotConfig :
         '''setCurrentConfig( (PlotConfigManager)arg1, (str)arg2) -> PlotConfig :
@@ -1052,13 +1051,13 @@ class PlotInfoValidator(PlObject):
         '''isCustomPossible( (PlotInfoValidator)arg1, (PlotInfo)arg2) -> CustomSizeResult :
 
     C++ signature :
-        enum AcPlPlotInfoValidator::eCustomSizeResult isCustomPossible(class PyPlPlotInfoValidator {lvalue},class PyPlPlotInfo {lvalue})'''
+        enum ZcPlPlotInfoValidator::eCustomSizeResult isCustomPossible(class PyPlPlotInfoValidator {lvalue},class PyPlPlotInfo {lvalue})'''
         ...
     def matchingPolicy (self, *args, **kwargs)-> PyPl.MatchingPolicy :
         '''matchingPolicy( (PlotInfoValidator)arg1) -> MatchingPolicy :
 
     C++ signature :
-        enum AcPlPlotInfoValidator::MatchingPolicy matchingPolicy(class PyPlPlotInfoValidator {lvalue})'''
+        enum ZcPlPlotInfoValidator::MatchingPolicy matchingPolicy(class PyPlPlotInfoValidator {lvalue})'''
         ...
     def mediaBoundsWeight (self, *args, **kwargs)-> int :
         '''mediaBoundsWeight( (PlotInfoValidator)arg1) -> int :
@@ -1148,7 +1147,7 @@ class PlotInfoValidator(PlObject):
         '''setMediaMatchingPolicy( (PlotInfoValidator)arg1, (MatchingPolicy)arg2) -> None :
 
     C++ signature :
-        void setMediaMatchingPolicy(class PyPlPlotInfoValidator {lvalue},enum AcPlPlotInfoValidator::MatchingPolicy)'''
+        void setMediaMatchingPolicy(class PyPlPlotInfoValidator {lvalue},enum ZcPlPlotInfoValidator::MatchingPolicy)'''
         ...
     def setMediaMatchingThreshold (self, *args, **kwargs)-> None :
         '''setMediaMatchingThreshold( (PlotInfoValidator)arg1, (SubentType)arg2) -> None :
@@ -1308,7 +1307,7 @@ __init__( (object)arg1, (int)arg2, (bool)arg3, (int)arg4, (bool)arg5) -> None :
         '''getPlotMsgString( (PlotProgressDialog)arg1, (PlotMSGIndex)arg2) -> str :
 
     C++ signature :
-        class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > getPlotMsgString(class PyPlPlotProgressDialog {lvalue},enum AcPlPlotProgressDialog::PlotMSGIndex)'''
+        class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > getPlotMsgString(class PyPlPlotProgressDialog {lvalue},enum ZcPlPlotProgressDialog::PlotMSGIndex)'''
         ...
     def getPlotProgressRange (self, *args, **kwargs)-> tuple[int,int] :
         '''getPlotProgressRange( (PlotProgressDialog)arg1) -> tuple :
@@ -1386,7 +1385,7 @@ __init__( (object)arg1, (int)arg2, (bool)arg3, (int)arg4, (bool)arg5) -> None :
         '''plotCancelStatus( (PlotProgressDialog)arg1) -> PlotCancelStatus :
 
     C++ signature :
-        enum AcPlPlotProgress::PlotCancelStatus plotCancelStatus(class PyPlPlotProgressDialog {lvalue})'''
+        enum ZcPlPlotProgress::PlotCancelStatus plotCancelStatus(class PyPlPlotProgressDialog {lvalue})'''
         ...
     def plotProgressPos (self, *args, **kwargs)-> int :
         '''plotProgressPos( (PlotProgressDialog)arg1) -> int :
@@ -1404,13 +1403,13 @@ __init__( (object)arg1, (int)arg2, (bool)arg3, (int)arg4, (bool)arg5) -> None :
         '''setPlotCancelStatus( (PlotProgressDialog)arg1, (PlotCancelStatus)arg2) -> None :
 
     C++ signature :
-        void setPlotCancelStatus(class PyPlPlotProgressDialog {lvalue},enum AcPlPlotProgress::PlotCancelStatus)'''
+        void setPlotCancelStatus(class PyPlPlotProgressDialog {lvalue},enum ZcPlPlotProgress::PlotCancelStatus)'''
         ...
     def setPlotMsgString (self, *args, **kwargs)-> bool :
         '''setPlotMsgString( (PlotProgressDialog)arg1, (PlotMSGIndex)arg2, (str)arg3) -> bool :
 
     C++ signature :
-        bool setPlotMsgString(class PyPlPlotProgressDialog {lvalue},enum AcPlPlotProgressDialog::PlotMSGIndex,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)'''
+        bool setPlotMsgString(class PyPlPlotProgressDialog {lvalue},enum ZcPlPlotProgressDialog::PlotMSGIndex,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)'''
         ...
     def setPlotProgressPos (self, *args, **kwargs)-> None :
         '''setPlotProgressPos( (PlotProgressDialog)arg1, (int)arg2) -> None :
@@ -1428,7 +1427,7 @@ __init__( (object)arg1, (int)arg2, (bool)arg3, (int)arg4, (bool)arg5) -> None :
         '''setSheetCancelStatus( (PlotProgressDialog)arg1, (SheetCancelStatus)arg2) -> None :
 
     C++ signature :
-        void setSheetCancelStatus(class PyPlPlotProgressDialog {lvalue},enum AcPlPlotProgress::SheetCancelStatus)'''
+        void setSheetCancelStatus(class PyPlPlotProgressDialog {lvalue},enum ZcPlPlotProgress::SheetCancelStatus)'''
         ...
     def setSheetProgressPos (self, *args, **kwargs)-> None :
         '''setSheetProgressPos( (PlotProgressDialog)arg1, (int)arg2) -> None :
@@ -1452,7 +1451,7 @@ __init__( (object)arg1, (int)arg2, (bool)arg3, (int)arg4, (bool)arg5) -> None :
         '''sheetCancelStatus( (PlotProgressDialog)arg1) -> SheetCancelStatus :
 
     C++ signature :
-        enum AcPlPlotProgress::SheetCancelStatus sheetCancelStatus(class PyPlPlotProgressDialog {lvalue})'''
+        enum ZcPlPlotProgress::SheetCancelStatus sheetCancelStatus(class PyPlPlotProgressDialog {lvalue})'''
         ...
     def sheetProgressPos (self, *args, **kwargs)-> int :
         '''sheetProgressPos( (PlotProgressDialog)arg1) -> int :

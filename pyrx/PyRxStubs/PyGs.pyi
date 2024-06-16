@@ -1,13 +1,12 @@
-import PyRx
-import PyGe
-import PyGi
-import PyGs
-import PyDb
-import PyAp
-import PyEd
-import PyPl
-from typing import overload
-from typing import Any
+from . import PyRx
+from . import PyGe
+from . import PyGi
+from . import PyGs
+from . import PyDb
+from . import PyAp
+from . import PyEd
+from . import PyPl
+from typing import Any, overload
 
 class Core(object):
     def __init__ (self, *args, **kwargs)-> None :
@@ -40,30 +39,6 @@ class Core(object):
     @staticmethod
     def setViewParameters (vpNum : int,view : PyGs.View,bRegen: bool,bRescale: bool,bSync: bool=False)-> bool :
         '''                             '''
-        ...
-
-class GraphicsKernel(object):
-    def __init__ (self, *args, **kwargs)-> None :
-        '''Raises an exception
-This class cannot be instantiated from Python'''
-        ...
-    def addRef (self, *args, **kwargs)-> None :
-        '''addRef( (GraphicsKernel)arg1) -> None :
-
-    C++ signature :
-        void addRef(class PyGsGraphicsKernel {lvalue})'''
-        ...
-    def className (self, *args, **kwargs)-> str :
-        '''className() -> str :
-
-    C++ signature :
-        class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > className()'''
-        ...
-    def delRef (self, *args, **kwargs)-> bool :
-        '''delRef( (GraphicsKernel)arg1) -> bool :
-
-    C++ signature :
-        bool delRef(class PyGsGraphicsKernel {lvalue})'''
         ...
 
 class GsManager(object):
@@ -101,7 +76,7 @@ This class cannot be instantiated from Python'''
     def getViewport (self)-> tuple[PyGe.Point2d,PyGe.Point2d] :
         '''                             '''
         ...
-    def graphicsKernel (self)-> PyGs.GraphicsKernel :
+    def graphicsKernel (self)-> object :
         '''                             '''
         ...
     def isBackClipped (self)-> bool :
@@ -163,22 +138,4 @@ This class cannot be instantiated from Python'''
         ...
     def worldToDeviceMatrix (self)-> PyGe.Matrix3d :
         '''                             '''
-        ...
-
-class KernelDescriptor(object):
-    def __init__ (self, *args, **kwargs)-> None :
-        '''Raises an exception
-This class cannot be instantiated from Python'''
-        ...
-    def addSupport (self, *args, **kwargs)-> None :
-        '''addSupport( (KernelDescriptor)arg1, (str)arg2) -> None :
-
-    C++ signature :
-        void addSupport(class PyGsKernelDescriptor {lvalue},class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)'''
-        ...
-    def className (self, *args, **kwargs)-> str :
-        '''className() -> str :
-
-    C++ signature :
-        class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > className()'''
         ...

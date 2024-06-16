@@ -1,13 +1,12 @@
-import PyRx
-import PyGe
-import PyGi
-import PyGs
-import PyDb
-import PyAp
-import PyEd
-import PyPl
-from typing import overload
-from typing import Any
+from . import PyRx
+from . import PyGe
+from . import PyGi
+from . import PyGs
+from . import PyDb
+from . import PyAp
+from . import PyEd
+from . import PyPl
+from typing import Any, overload
 
 class ACIcolorMethod(object):
     def kACIbyBlock (self, *args, **kwargs)-> None :
@@ -287,30 +286,6 @@ class AcGeoMapResolution(object):
 
 class AcGeoMapType(object):
     def kAerial (self, *args, **kwargs)-> None :
-        '''None'''
-        ...
-    def kBingAerial (self, *args, **kwargs)-> None :
-        '''None'''
-        ...
-    def kBingHybrid (self, *args, **kwargs)-> None :
-        '''None'''
-        ...
-    def kBingRoad (self, *args, **kwargs)-> None :
-        '''None'''
-        ...
-    def kEsriDarkGray (self, *args, **kwargs)-> None :
-        '''None'''
-        ...
-    def kEsriImagery (self, *args, **kwargs)-> None :
-        '''None'''
-        ...
-    def kEsriLightGray (self, *args, **kwargs)-> None :
-        '''None'''
-        ...
-    def kEsriOpenStreetMap (self, *args, **kwargs)-> None :
-        '''None'''
-        ...
-    def kEsriStreets (self, *args, **kwargs)-> None :
         '''None'''
         ...
     def kHybrid (self, *args, **kwargs)-> None :
@@ -1650,6 +1625,15 @@ class Color(object):
     def entityColor (self)-> PyDb.EntityColor :
         '''                             '''
         ...
+    def getCOLORREF (self)-> int :
+        '''                             '''
+        ...
+    def getRGB (self)-> int :
+        '''                             '''
+        ...
+    def getRGBM (self)-> int :
+        '''                             '''
+        ...
     def green (self)-> int :
         '''                             '''
         ...
@@ -1680,13 +1664,34 @@ class Color(object):
     def red (self)-> int :
         '''                             '''
         ...
+    def setByBlock (self)-> None :
+        '''                             '''
+        ...
+    def setByLayer (self)-> None :
+        '''                             '''
+        ...
+    def setCOLORREF (self, val : int)-> PyDb.ErrorStatus :
+        '''                             '''
+        ...
     def setColorIndex (self, val : int)-> PyDb.ErrorStatus :
+        '''                             '''
+        ...
+    def setForeground (self)-> None :
+        '''                             '''
+        ...
+    def setLayerOff (self)-> None :
+        '''                             '''
+        ...
+    def setNone (self)-> None :
         '''                             '''
         ...
     def setPenIndex (self, val : int)-> PyDb.ErrorStatus :
         '''                             '''
         ...
-    def setRGB (self, red : int, green : int, blue : int)-> PyDb.ErrorStatus :
+    def setRGB (self, val : int)-> PyDb.ErrorStatus :
+        '''                             '''
+        ...
+    def setRGBM (self, val : int)-> PyDb.ErrorStatus :
         '''                             '''
         ...
 
@@ -6972,138 +6977,176 @@ class Entity(DbObject):
         ...
 
 class EntityColor(object):
-    def ByBlock (self)-> PyDb.EntityColor :
-        '''                             '''
-        ...
-    def ByLayer (self)-> PyDb.EntityColor :
-        '''                             '''
-        ...
-    def ByNone (self)-> PyDb.EntityColor :
-        '''                             '''
-        ...
-    def Foreground (self)-> PyDb.EntityColor :
-        '''                             '''
-        ...
-
-    @staticmethod
-    def NoneClr ()-> PyDb.EntityColor :
-        '''                             '''
-        ...
     def __init__ (self, r: int, g: int, b: int)-> None :
         '''                             '''
         ...
-    def black (self)-> PyDb.EntityColor :
-        '''                             '''
-        ...
-    def blue (self)-> int :
-        '''                             '''
-        ...
-    def canResolveRGB (self)-> bool :
-        '''                             '''
-        ...
-    def colorIndex (self)-> int :
-        '''                             '''
-        ...
-    def colorMethod (self)-> PyDb.ColorMethod :
-        '''                             '''
-        ...
-    def getCOLORREF (self)-> int :
-        '''                             '''
-        ...
-    def getRGB (self)-> int :
-        '''                             '''
-        ...
-    def getRGBM (self)-> int :
-        '''                             '''
-        ...
-    def green (self)-> int :
-        '''                             '''
-        ...
-    def isByACI (self)-> bool :
-        '''                             '''
-        ...
-    def isByBlock (self)-> bool :
-        '''                             '''
-        ...
-    def isByColor (self)-> bool :
-        '''                             '''
-        ...
-    def isByLayer (self)-> bool :
-        '''                             '''
-        ...
-    def isByPen (self)-> bool :
-        '''                             '''
-        ...
-    def isForeground (self)-> bool :
-        '''                             '''
-        ...
-    def isLayerFrozen (self)-> bool :
-        '''                             '''
-        ...
-    def isLayerFrozenOrOff (self)-> bool :
-        '''                             '''
-        ...
-    def isLayerOff (self)-> bool :
-        '''                             '''
-        ...
-    def isNone (self)-> bool :
-        '''                             '''
-        ...
-    def layerIndex (self)-> int :
-        '''                             '''
-        ...
-    def makeTrueColor (self)-> PyDb.EntityColor :
-        '''                             '''
-        ...
-    def penIndex (self)-> int :
-        '''                             '''
-        ...
-    def red (self)-> int :
-        '''                             '''
-        ...
-    def setByBlock (self)-> None :
-        '''                             '''
-        ...
-    def setByLayer (self)-> None :
-        '''                             '''
-        ...
-    def setCOLORREF (self, val : int)-> PyDb.ErrorStatus :
-        '''                             '''
-        ...
-    def setColorIndex (self, val : int)-> PyDb.ErrorStatus :
-        '''                             '''
-        ...
-    def setForeground (self)-> None :
-        '''                             '''
-        ...
-    def setLayerIndex (self, val : int)-> PyDb.ErrorStatus :
-        '''                             '''
-        ...
-    def setLayerOff (self)-> None :
-        '''                             '''
-        ...
-    def setNone (self)-> None :
-        '''                             '''
-        ...
-    def setPenIndex (self, val : int)-> PyDb.ErrorStatus :
-        '''                             '''
-        ...
+    def blue (self, *args, **kwargs)-> int :
+        '''blue( (EntityColor)arg1) -> int :
 
-    @overload
-    def setRGB (self, rgbquad: int)-> PyDb.ErrorStatus : ...
-    @overload
-    def setRGB (self, r: int, g: int, b: int)-> PyDb.ErrorStatus : ...
+    C++ signature :
+        unsigned char blue(class ZcCmEntityColor {lvalue})'''
+        ...
+    def color (self, *args, **kwargs)-> int :
+        '''color( (EntityColor)arg1) -> int :
+
+    C++ signature :
+        unsigned int color(class ZcCmEntityColor {lvalue})'''
+        ...
+    def colorIndex (self, *args, **kwargs)-> int :
+        '''colorIndex( (EntityColor)arg1) -> int :
+
+    C++ signature :
+        short colorIndex(class ZcCmEntityColor {lvalue})'''
+        ...
+    def colorMethod (self, *args, **kwargs)-> PyDb.ColorMethod :
+        '''colorMethod( (EntityColor)arg1) -> ColorMethod :
+
+    C++ signature :
+        enum ZcCmEntityColor::ColorMethod colorMethod(class ZcCmEntityColor {lvalue})'''
+        ...
+    def green (self, *args, **kwargs)-> int :
+        '''green( (EntityColor)arg1) -> int :
+
+    C++ signature :
+        unsigned char green(class ZcCmEntityColor {lvalue})'''
+        ...
+    def isByACI (self, *args, **kwargs)-> bool :
+        '''isByACI( (EntityColor)arg1) -> bool :
+
+    C++ signature :
+        bool isByACI(class ZcCmEntityColor {lvalue})'''
+        ...
+    def isByBlock (self, *args, **kwargs)-> bool :
+        '''isByBlock( (EntityColor)arg1) -> bool :
+
+    C++ signature :
+        bool isByBlock(class ZcCmEntityColor {lvalue})'''
+        ...
+    def isByColor (self, *args, **kwargs)-> bool :
+        '''isByColor( (EntityColor)arg1) -> bool :
+
+    C++ signature :
+        bool isByColor(class ZcCmEntityColor {lvalue})'''
+        ...
+    def isByLayer (self, *args, **kwargs)-> bool :
+        '''isByLayer( (EntityColor)arg1) -> bool :
+
+    C++ signature :
+        bool isByLayer(class ZcCmEntityColor {lvalue})'''
+        ...
+    def isByPen (self, *args, **kwargs)-> bool :
+        '''isByPen( (EntityColor)arg1) -> bool :
+
+    C++ signature :
+        bool isByPen(class ZcCmEntityColor {lvalue})'''
+        ...
+    def isForeground (self, *args, **kwargs)-> bool :
+        '''isForeground( (EntityColor)arg1) -> bool :
+
+    C++ signature :
+        bool isForeground(class ZcCmEntityColor {lvalue})'''
+        ...
+    def isLayerFrozen (self, *args, **kwargs)-> bool :
+        '''isLayerFrozen( (EntityColor)arg1) -> bool :
+
+    C++ signature :
+        bool isLayerFrozen(class ZcCmEntityColor {lvalue})'''
+        ...
+    def isLayerFrozenOrOff (self, *args, **kwargs)-> bool :
+        '''isLayerFrozenOrOff( (EntityColor)arg1) -> bool :
+
+    C++ signature :
+        bool isLayerFrozenOrOff(class ZcCmEntityColor {lvalue})'''
+        ...
+    def isLayerOff (self, *args, **kwargs)-> bool :
+        '''isLayerOff( (EntityColor)arg1) -> bool :
+
+    C++ signature :
+        bool isLayerOff(class ZcCmEntityColor {lvalue})'''
+        ...
+    def isNone (self, *args, **kwargs)-> bool :
+        '''isNone( (EntityColor)arg1) -> bool :
+
+    C++ signature :
+        bool isNone(class ZcCmEntityColor {lvalue})'''
+        ...
+    def layerIndex (self, *args, **kwargs)-> int :
+        '''layerIndex( (EntityColor)arg1) -> int :
+
+    C++ signature :
+        int layerIndex(class ZcCmEntityColor {lvalue})'''
+        ...
+    def penIndex (self, *args, **kwargs)-> int :
+        '''penIndex( (EntityColor)arg1) -> int :
+
+    C++ signature :
+        unsigned short penIndex(class ZcCmEntityColor {lvalue})'''
+        ...
+    def red (self, *args, **kwargs)-> int :
+        '''red( (EntityColor)arg1) -> int :
+
+    C++ signature :
+        unsigned char red(class ZcCmEntityColor {lvalue})'''
+        ...
+    def setBlue (self, *args, **kwargs)-> PyDb.ErrorStatus :
+        '''setBlue( (EntityColor)arg1, (int)arg2) -> ErrorStatus :
+
+    C++ signature :
+        enum Zcad::ErrorStatus setBlue(class ZcCmEntityColor {lvalue},unsigned char)'''
+        ...
+    def setColor (self, *args, **kwargs)-> PyDb.ErrorStatus :
+        '''setColor( (EntityColor)arg1, (SubentType)arg2) -> ErrorStatus :
+
+    C++ signature :
+        enum Zcad::ErrorStatus setColor(class ZcCmEntityColor {lvalue},unsigned int)'''
+        ...
+    def setColorIndex (self, *args, **kwargs)-> PyDb.ErrorStatus :
+        '''setColorIndex( (EntityColor)arg1, (DxfCode)arg2) -> ErrorStatus :
+
+    C++ signature :
+        enum Zcad::ErrorStatus setColorIndex(class ZcCmEntityColor {lvalue},short)'''
+        ...
+    def setColorMethod (self, *args, **kwargs)-> PyDb.ErrorStatus :
+        '''setColorMethod( (EntityColor)arg1, (ColorMethod)arg2) -> ErrorStatus :
+
+    C++ signature :
+        enum Zcad::ErrorStatus setColorMethod(class ZcCmEntityColor {lvalue},enum ZcCmEntityColor::ColorMethod)'''
+        ...
+    def setGreen (self, *args, **kwargs)-> PyDb.ErrorStatus :
+        '''setGreen( (EntityColor)arg1, (int)arg2) -> ErrorStatus :
+
+    C++ signature :
+        enum Zcad::ErrorStatus setGreen(class ZcCmEntityColor {lvalue},unsigned char)'''
+        ...
+    def setLayerIndex (self, *args, **kwargs)-> PyDb.ErrorStatus :
+        '''setLayerIndex( (EntityColor)arg1, (int)arg2) -> ErrorStatus :
+
+    C++ signature :
+        enum Zcad::ErrorStatus setLayerIndex(class ZcCmEntityColor {lvalue},int)'''
+        ...
+    def setPenIndex (self, *args, **kwargs)-> PyDb.ErrorStatus :
+        '''setPenIndex( (EntityColor)arg1, (int)arg2) -> ErrorStatus :
+
+    C++ signature :
+        enum Zcad::ErrorStatus setPenIndex(class ZcCmEntityColor {lvalue},unsigned short)'''
+        ...
     def setRGB (self, *args, **kwargs)-> PyDb.ErrorStatus :
-        '''Overloads:
-    - rgbquad: int
-    - r: int, g: int, b: int
-    '''
+        '''setRGB( (EntityColor)arg1, (int)arg2, (int)arg3, (int)arg4) -> ErrorStatus :
+
+    C++ signature :
+        enum Zcad::ErrorStatus setRGB(class ZcCmEntityColor {lvalue},unsigned char,unsigned char,unsigned char)'''
         ...
-    def setRGBM (self, val : int)-> PyDb.ErrorStatus :
-        '''                             '''
+    def setRed (self, *args, **kwargs)-> PyDb.ErrorStatus :
+        '''setRed( (EntityColor)arg1, (int)arg2) -> ErrorStatus :
+
+    C++ signature :
+        enum Zcad::ErrorStatus setRed(class ZcCmEntityColor {lvalue},unsigned char)'''
         ...
-    def white (self)-> PyDb.EntityColor :
-        '''                             '''
+    def trueColor (self, *args, **kwargs)-> int :
+        '''trueColor( (EntityColor)arg1) -> int :
+
+    C++ signature :
+        unsigned int trueColor(class ZcCmEntityColor {lvalue})'''
         ...
 
 class EntityReactor(PyRx.RxObject):
@@ -11384,27 +11427,6 @@ class Intersect(object):
         ...
     def kOnBothOperands (self, *args, **kwargs)-> None :
         '''None'''
-        ...
-
-class JoinEntityPE(PyRx.RxObject):
-    def __init__ (self, obj: PyRx.RxObject)-> None :
-        '''                             '''
-        ...
-
-    @staticmethod
-    def className ()-> str :
-        '''                             '''
-        ...
-
-    @staticmethod
-    def desc ()-> PyRx.RxClass :
-        '''Returns a pointer to the AcRxClass object representing the specific class, or most recent parent class explicitly registered with ObjectARX of either the pointer type used to invoke it or the class qualifier used with it. (Remember that when a static member function is invoked via a pointer, the pointer type, not the object type, determines which implementation of the function is invoked.)When working with a pointer to an object and the proper AcRxClass object for the class of the object pointed to is desired, the AcRxObject::isA() function should be used, since it is a virtual non-static method and is therefore not pointer type dependent.Caching the value of the pointer returned by this method is acceptable, provided the application knows that the AcRxClass object pointed to by the returned pointer was created by an ObjectARX application that will not be unloaded. '''
-        ...
-    def joinEntities (self, primaryEntity : PyDb.Entity, secondaryEntities : list[PyDb.Entity], tol : PyGe.Tol=None)-> list[int] :
-        '''                             '''
-        ...
-    def joinEntity (self, primaryEntity : PyDb.Entity, secondaryEntity : PyDb.Entity, tol : PyGe.Tol=None)-> bool :
-        '''                             '''
         ...
 
 class JoinStyle(object):

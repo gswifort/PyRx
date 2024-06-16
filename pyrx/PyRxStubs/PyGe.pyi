@@ -1,13 +1,12 @@
-import PyRx
-import PyGe
-import PyGi
-import PyGs
-import PyDb
-import PyAp
-import PyEd
-import PyPl
-from typing import overload
-from typing import Any
+from . import PyRx
+from . import PyGe
+from . import PyGi
+from . import PyGs
+from . import PyDb
+from . import PyAp
+from . import PyEd
+from . import PyPl
+from typing import Any, overload
 
 class AcGeCSIConfig(object):
     def kXCoincident (self, *args, **kwargs)-> None :

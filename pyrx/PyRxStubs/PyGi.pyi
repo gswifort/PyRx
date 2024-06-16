@@ -1,13 +1,12 @@
-import PyRx
-import PyGe
-import PyGi
-import PyGs
-import PyDb
-import PyAp
-import PyEd
-import PyPl
-from typing import overload
-from typing import Any
+from . import PyRx
+from . import PyGe
+from . import PyGi
+from . import PyGs
+from . import PyDb
+from . import PyAp
+from . import PyEd
+from . import PyPl
+from typing import Any, overload
 
 class ArcType(object):
     def kAcGiArcChord (self, *args, **kwargs)-> None :
@@ -78,13 +77,7 @@ class DrawFlags(object):
     def kDrawHatchGroup (self, *args, **kwargs)-> None :
         '''None'''
         ...
-    def kDrawIsInWCS (self, *args, **kwargs)-> None :
-        '''None'''
-        ...
     def kDrawNoForceByLayer (self, *args, **kwargs)-> None :
-        '''None'''
-        ...
-    def kDrawNoImageFrame (self, *args, **kwargs)-> None :
         '''None'''
         ...
     def kDrawNoLineWeight (self, *args, **kwargs)-> None :
@@ -442,36 +435,6 @@ class GiDrawableType(object):
         ...
     def kWebLight (self, *args, **kwargs)-> None :
         '''None'''
-        ...
-
-class GiGraphicsKernel(object):
-    def __init__ (self, *args, **kwargs)-> None :
-        '''Raises an exception
-This class cannot be instantiated from Python'''
-        ...
-    def className (self, *args, **kwargs)-> str :
-        '''className() -> str :
-
-    C++ signature :
-        class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > className()'''
-        ...
-    def getDescriptor (self)-> PyGi.GiKernelDescriptor :
-        '''This method returns the kernel descriptor for the graphics kernel. A given kernel only has one descriptor, but it's possible for multiple kernels to have the same descriptor.'''
-        ...
-
-class GiKernelDescriptor(object):
-    def __init__ (self, *args, **kwargs)-> None :
-        '''Raises an exception
-This class cannot be instantiated from Python'''
-        ...
-    def className (self, *args, **kwargs)-> str :
-        '''className() -> str :
-
-    C++ signature :
-        class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > className()'''
-        ...
-    def supports (self)-> bool :
-        '''This used by a consumer of an AcGsGraphicsKernel to determine which features are supported by the kernel.'''
         ...
 
 class OrientationTransformBehavior(object):
