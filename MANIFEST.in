@@ -1,0 +1,4 @@
+include pyrx/PyRxBin/*.arx
+include pyrx/PyRxBin/*.brx
+include pyrx/PyRxBin/*.grx
+include pyrx/PyRxBin/*.zrx
