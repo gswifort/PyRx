@@ -48,3 +48,7 @@ pyrx/activex/.*pyi?
 [tool.isort]
 profile = "black"
 skip-glob = 'PyRxStubs/*.py*'
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = ["tests"]
