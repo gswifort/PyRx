@@ -53,3 +53,6 @@ skip_glob = ["PyRxStubs/*.py*"]
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = ["tests"]
+
+[tool.mypy]
+ignore_missing_imports = true
