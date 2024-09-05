@@ -23,6 +23,7 @@ def PyRxCmd_pytest():
                 pytest_args = PYTEST_ARGS_FILE.read_text("utf-8").splitlines() if PYTEST_ARGS_FILE.exists() else []
                 print(f"{pytest_args=}\n")
                 pytest.main(pytest_args)
+                input("Press any key to continue . . . ")
     except Exception:
         traceback.print_exc()
     finally:
