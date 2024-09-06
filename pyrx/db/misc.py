@@ -63,5 +63,5 @@ def iter_db_objects(
 
 
 def get_db() -> Db.Database:
-    """Return current database."""
-    return Db.curDb()
+    """Return default (working) database."""
+    return Db.workingDb()
