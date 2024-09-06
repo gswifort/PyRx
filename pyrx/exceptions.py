@@ -4,6 +4,8 @@ import re
 import types
 import typing as t
 
+from pyrx import Ed
+
 
 class DefaultMessageMixin:
     default_message: str
@@ -1931,3 +1933,99 @@ class eNoUnderlayHost(ARXException):
 class eInetBase(ARXException):
     err_num = 20000
     err_name = "eInetBase"
+
+
+class PromptStatus(Error):
+    _subclasses: dict[str, type[PromptStatus]] = {}
+    err_num: t.Optional[int] = None
+    err_name: t.Optional[str] = None
+
+    def __init_subclass__(cls) -> None:
+        super().__init_subclass__()
+
+        err_num = cls.err_num
+        if err_num in PromptStatus._subclasses:
+            raise TypeError(f"PromptStatus subclass with {err_num=!r} already exists")
+        PromptStatus._subclasses[err_num] = cls
+
+    @classmethod
+    def raise_for_status(cls, status: Ed.PromptStatus, /):
+        """
+        Raise an appropriate error based on the provided ``Ed.PromptStatus``.
+
+        If the status is ``Ed.PromptStatus.eOk``, no exception is raised. If the status
+        is not a valid prompt status, a ``TypeError`` is raised.
+
+        Args:
+            status: The status to
+                check for errors.
+
+        Raises:
+            TypeError: If the provided status is not of type ``Ed.PromptStatus``.
+            PromptStatus: If no specific error type is found for the provided status.
+
+        Examples:
+
+            User cancels operation:
+
+            >>> status, ent_id, pick_point = Ed.Editor.entSel("Select object: ")
+            >>> PromptStatus.raise_for_status(status)
+            Traceback (most recent call last):
+            (...)
+            pyrx.exceptions.eRejected
+
+            User selects an object:
+
+            >>> status, ent_id, pick_point = Ed.Editor.entSel("Select object: ")
+            >>> PromptStatus.raise_for_status(status) is None
+            True
+        """
+        if not isinstance(status, Ed.PromptStatus):
+            raise TypeError(f"status must be of type Ed.PromptStatus, not {status.__class__.__name__}")
+        if status == Ed.PromptStatus.eOk:
+            return
+        err_type = cls._subclasses.get(int(status), None)
+        if err_type is None:
+            raise PromptStatus(str(status))
+        else:
+            raise err_type
+
+
+class eDirect(PromptStatus):
+    err_num = -5999
+    err_name = "eDirect"
+
+
+class eError(PromptStatus):
+    err_num = -5001
+    err_name = "eError"
+
+
+class eFailed(PromptStatus):
+    err_num = -5004
+    err_name = "eFailed"
+
+
+class eKeyword(PromptStatus):
+    err_num = -5005
+    err_name = "eKeyword"
+
+
+class eModeless(PromptStatus):
+    err_num = 5027
+    err_name = "eModeless"
+
+
+class eNone(PromptStatus):
+    err_num = 5000
+    err_name = "eNone"
+
+
+class eOk(PromptStatus):
+    err_num = 5100
+    err_name = "eOk"
+
+
+class eRejected(PromptStatus):
+    err_num = -5003
+    err_name = "eRejected"
