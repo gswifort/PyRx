@@ -19,6 +19,10 @@ class Error(Exception):
     """Base exception class for all ``pyrx`` errors."""
 
 
+class UnknownDbClass(Error):
+    pass
+
+
 class ARXException(Error):
 
     _subclasses: dict[str, type[ARXException]] = {}
