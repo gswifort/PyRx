@@ -23,6 +23,10 @@ class UnknownDbClass(Error):
     pass
 
 
+class LayoutDoesNotExist(Error):
+    pass
+
+
 class ARXException(Error):
 
     _subclasses: dict[str, type[ARXException]] = {}
