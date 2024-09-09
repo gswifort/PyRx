@@ -22,6 +22,7 @@ from pyrx_imp import Ap, Db, Ed, Ge, Gi, Gs, Pl, Rx, Sm
 from PyRxDebug import PyRxCmd_debug  # noqa: F401
 
 from pyrx.console import console, std_redirect
+from pyrx.ed import entsel, select
 from pyrx.utils.sentinels import Sentinel
 
 _UNSET = Sentinel("Unset")
@@ -266,16 +267,6 @@ def run_ptpython_repl():
 
 
 # shortcut functions
-
-
-def entsel(prompt="Select object: ") -> tuple[Ed.PromptStatus, Db.ObjectId, Ge.Point3d]:
-    """Select single entity."""
-    return Ed.Editor.entSel(prompt)
-
-
-def select(prompt="Select objects: ", filters=()) -> tuple[Ed.PromptStatus, Ed.SelectionSet]:
-    """Select multiple entities."""
-    return Ed.Editor.selectPrompt(prompt, "", list(filters))
 
 
 def curdb() -> Db.Database:
