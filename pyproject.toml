@@ -44,7 +44,7 @@ pyrx/activex/.*pyi?
 | pyrx/PyRxStubs/.*pyi?
 | PyRxStubs/.*pyi?
 '''
-line-length = 120
+line-length = 99
 
 [tool.isort]
 profile = "black"
