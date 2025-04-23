@@ -168,11 +168,13 @@ static bool initWxApp()
         wxSetInstance(hInst);
         if (wxTheApp && wxTheApp->CallOnInit())
         {
+#ifdef NEVER
             static wxGUIEventLoop evtLoopStd;
             wxGUIEventLoop* evtLoop = static_cast<wxGUIEventLoop*>(wxEventLoop::GetActive());
             if (!evtLoop)
                 evtLoop = &evtLoopStd;
             wxEventLoop::SetActive(evtLoop);
+#endif 
             return true;
         }
     }
@@ -202,17 +204,6 @@ const std::filesystem::path& PyRxApp::moduleName()
         path = buffer.c_str();
     }
     return path;
-}
-
-bool PyRxApp::load_pyrx_onload()
-{
-    const auto [bfound, spath] = PyRxAppSettings::pyonload_path();
-    if (bfound)
-    {
-        PyAutoLockGIL lock;
-        return ads_loadPythonModule(spath.c_str());
-    }
-    return false;
 }
 
 bool PyRxApp::load_host_init()
