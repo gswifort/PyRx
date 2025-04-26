@@ -42,10 +42,23 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: CPython",
     "Operating System :: Microsoft :: Windows",
 ]
-dependencies = ["wxpython>=4.2.3", "pywin32", "debugpy>=1.8.0"]
+dependencies = [
+    "wxpython>=4.2.3",
+    "pywin32",
+    "debugpy>=1.8.0",
+    "pydantic_settings",
+]
 
 [project.optional-dependencies]
-dev = ["pytest", "build", "ruff", "python-dotenv[cli]", "pre-commit", "mypy", "types-pywin32"]
+dev = [
+    "pytest",
+    "build",
+    "ruff",
+    "python-dotenv[cli]",
+    "pre-commit",
+    "mypy",
+    "types-pywin32",
+]
 ptrepl = ["ptpython", "prompt_toolkit"]
 
 [project.urls]
@@ -87,26 +100,23 @@ files = [
     "pyrx/PyAx.pyi",
     "pyrx/PyBr.pyi",
     "pyrx/PyBrx.pyi",
-#    "pyrx/PyBrxBim.pyi",  # Needs extra work
-#    "pyrx/PyBrxCv.pyi",  # Needs extra work
-#    "pyrx/PyDb.pyi",  # Needs extra work
-#    "pyrx/PyEd.pyi",  # Needs extra work
-#    "pyrx/PyGe.pyi",  # Needs extra work
+    #    "pyrx/PyBrxBim.pyi",  # Needs extra work
+    #    "pyrx/PyBrxCv.pyi",  # Needs extra work
+    #    "pyrx/PyDb.pyi",  # Needs extra work
+    #    "pyrx/PyEd.pyi",  # Needs extra work
+    #    "pyrx/PyGe.pyi",  # Needs extra work
     "pyrx/PyGi.pyi",
     "pyrx/PyGs.pyi",
     "pyrx/PyPl.pyi",
     "pyrx/PyRx.pyi",
     "pyrx/PyRxDebug.py",
     "pyrx/PySm.pyi",
-#    "PySamples",  # Needs extra work
+    #    "PySamples",  # Needs extra work
     "tests",
     "gen_pyi.py",
     "in_test_runner.py",
 ]
 
 [[tool.mypy.overrides]]
-module = [
-    "wx.*",
-    "debugpy.*"
-]
+module = ["wx.*", "debugpy.*"]
 ignore_missing_imports = true
